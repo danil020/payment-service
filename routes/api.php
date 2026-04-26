@@ -3,18 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
 
-/**
- * TEST ROUTE (debug)
- */
+
+
 Route::get('/test', function () {
     return response()->json([
         "message" => "Payment Service aktif"
     ]);
 });
 
-/**
- * GET semua payment (dummy)
- */
+
 Route::get('/payments', function () {
     return response()->json([
         [
@@ -30,9 +27,7 @@ Route::get('/payments', function () {
     ]);
 });
 
-/**
- * GET detail payment
- */
+
 Route::get('/payments/{id}', function ($id) {
     return response()->json([
         "payment_id" => $id,
@@ -41,9 +36,7 @@ Route::get('/payments/{id}', function ($id) {
     ]);
 });
 
-/**
- * POST payment (INTI TUGAS)
- */
+
 Route::post('/payments/{orderId}', function ($orderId) {
 
     try {
@@ -63,19 +56,15 @@ Route::post('/payments/{orderId}', function ($orderId) {
     ]);
 });
 
-/**
- * UPDATE status payment
- */
+
 Route::put('/payments/{id}', function ($id) {
     return response()->json([
         "payment_id" => $id,
         "status" => "UPDATED"
     ]);
 });
+ 
 
-/**
- * DELETE payment
- */
 Route::delete('/payments/{id}', function ($id) {
     return response()->json([
         "message" => "Payment $id deleted"
